@@ -4,7 +4,7 @@ a simple weather application using HTML, CSS, and JS using rapid API for weather
 
 ## Live Server
 
-Link: [Live Server Link](https://65c2632efad6960eb5bac7db--chimerical-selkie-37eb57.netlify.app/)
+Live Link with out using API (API count limit concern) : [Live Server Link](https://65c2632efad6960eb5bac7db--chimerical-selkie-37eb57.netlify.app/)
 
 
 ## Api Used
@@ -32,3 +32,7 @@ Using Alternatives to Avoiding Api Request Count Limit: https://ahorn.lima-city.
 ![Screenshot 2024-02-06 201036](https://github.com/kasyap2807/Weather-Application/assets/125851796/155fa544-f142-494b-82a0-9efe5d818864)
 ### About ME page
 ![Screenshot 2024-02-06 201050](https://github.com/kasyap2807/Weather-Application/assets/125851796/f81d4b7f-1ecb-4a3f-bf83-b3d64dfbb67e)
+
+
+### LIVE LINK WITH API 
+LINK : [LIVE LINK WITH API](https://65c26a13cf6fbf12c0ee02a7--fabulous-semifreddo-6d70d1.netlify.app/)
