@@ -16,11 +16,16 @@ Link:
 
 #Api Used
 
-Open Weather: https://rapidapi.com/worldapi/api/open-weather13
+#Open Weather: https://rapidapi.com/worldapi/api/open-weather13
 
-open weather used for both current weather and 5 day forecasting
+open weather is used for both current weather and 5-day forecasting
 
-address-from-to-latitude-longitude: https://rapidapi.com/apishub/api/address-from-to-latitude-longitude/
+#address-from-to-latitude-longitude: https://rapidapi.com/apishub/api/address-from-to-latitude-longitude/
 
-address-from-to-latitude-longitude is used for to convert place Or Zip code to Latitude, longitude
+address-from-to-latitude-longitude is used to convert place Or Zip code to Latitude, longitude
+
+#open weather: https://openweathermap.org/api/weathermaps
+open weather is used for Taking responsive maps of weather
+
+Using Alternatives to Avoiding Api Request Count Limit : https://ahorn.lima-city.de/owm/
 
