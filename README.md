@@ -1,4 +1,4 @@
-![Screenshot 2024-02-06 201016](https://github.com/kasyap2807/Weather-Application/assets/125851796/9ffadb9e-28b5-4529-bca4-5e918a7d164f)# Weather-Application
+
 a simple weather application using HTML, CSS, and JS using rapid API for weather data and local storage for storing data 
 
 #Main Weather Page
