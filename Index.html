@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./Index.css">
+    <link rel="stylesheet" href="./Slider.css">
+</head>
+<body>
+<div class="NavBar">
+    <div class="Heading">
+    <h1>Weather Application</h1>
+    </div>
+    <div class="mainNav">
+        <a href="/about.html">about</a>
+        <a href="/Forecast.html">5 Days Forecast</a>
+        <a href="https://ahorn.lima-city.de/owm/">live weather</a>
+        <a href="/History.html">History</a>
+    </div>
+</div>
+<div class="container">
+    <div id= "cont" style="padding: 20px;">
+        <h1 id="Weather"></h1>
+        <div id = "WeatherImage"> 
+        </div>
+        <h2 id="Location"></h2>
+        <a onclick= "changeloc()" id="changeloaction"></a>
+        <h4 id = "Temps"></h4>
+        <h5 id="feels like"></h5>
+    </div>
+
+    <div id="cont2">
+        <div class="class" id="class1">
+            <img id="image" src="./Temperatureclip.png">
+            <h5 id="Minmax Temp"></h5>
+        </div>
+        <div class="class" id="class1">
+            <img id="image" src="./PressureClip.png">
+            <h5 id="pressure"></h5>
+        </div>
+        <div class="class" id="class2">
+            <img id="image" src="./HumidityClip.png">
+            <h5 id="humidity"></h5>
+        </div>
+        <div class="class" id="class2">
+            <img id="image" src="./WindClip.png">
+            <h5 id="wind"></h5>
+        </div> 
+    </div>
+    <div id="buttons">
+    </div>
+    <div id="popup" >
+        <p id="popups"></p>
+    </div>
+    <div id="popup2" >
+        <p id="popups2">Select Option below</p>
+        <button id="button" onclick=Detectloc()>Detect Loaction</button>
+        <button id="button" onclick=Enterloc()>Enter Location</button>
+    </div>
+    <div id="popup3" >
+        <p id="popups3">Enter your location</p>
+        <input id="input" placeholder="Enter your pincode or townname,District name" required>
+        <button id="button" onclick=Submit()>Submit</button>
+        <div id="text"></div>
+    </div>
+    <div id="Footer">
+        <div class="toggle">
+        ℉  
+        <label class="switch">
+            <input type="checkbox" id="checkbox" onchange="ftoc()" >
+            <span class="slider round"></span>
+        </label>
+        ℃  
+        <button id="button" onclick="defchange()" >change default location</button>
+        <button id="button" onclick="clearhist()" >clear history</button>
+    </div>
+        <p>design and devloped by krishna kasyap kanuparthi</p>
+    </div>
+</div>
+<script src="./Index2.js">
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+.Heading{
+    /* text-align: left; */
+    margin-right: auto; /* Pushes the logo to the left */
+    padding: 10px;
+}
+
+.NavBar{
+    height: 40px;
+    margin: auto;
+    display: flex;
+    background-color: rgba(52, 102, 200, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.mainNav{
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+}
+.mainNav a{
+    color: white;
+    background-color: black;
+    border: solid black;
+    text-decoration: none;
+    position: relative;    
+}
+.mainNav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media screen and (max-width: 579px) {
+    .NavBar{
+        height: 150px;
+    }
+
+    .mainNav{
+        flex-direction: column;
+        gap: 5px;
+    } 
+  }
+
+  body{
+    background-image: url("./Offline2.jpg");
+    height: 100vh; 
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;  
+  }
+
+  #cont{
+    border: 2px solid rgb(52, 102, 200);
+    background-color: rgba(52, 102, 200, 0.3);
+    margin: 10px;
+    text-align: center;
+  }
+
+  #History{
+    display: flex;
+    flex-direction: column;
+    
+  }

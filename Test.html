@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map Example</title>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Map</h1>
+    <div id="map"></div>
+
+    <script src="https://tile.openweathermap.org/map/temp_new/1/1/11.png?appid=bbcda8dd9e48aa4b57016ec8f941d1bb" async defer></script>+
+    <script>
+        let map;
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 40.7128, lng: -74.0060 }, // Example: New York City
+                zoom: 10,
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+body{
+    height: 100vh; 
+    background-position: center ;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;  
+}
+
+#buttons{
+    display: flex;
+    justify-content: space-around;
+}
+
+#button{
+    width: max-content;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px solid #5783db;
+    background-color: rgba(87, 131, 219, 0.3);
+}
+
+
+.Heading{
+    /* text-align: left; */
+    margin-right: auto; /* Pushes the logo to the left */
+    padding: 10px;
+}
+
+.NavBar{
+    height: 40px;
+    margin: auto;
+    display: flex;
+    background-color: rgba(52, 102, 200, 0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.mainNav{
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+}
+.mainNav a{
+    color: white;
+    background-color: black;
+    border: solid black;
+    text-decoration: none;
+    position: relative;    
+}
+.mainNav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media screen and (max-width: 579px) {
+    .NavBar{
+        height: 150px;
+    }
+
+    .mainNav{
+        flex-direction: column;
+        gap: 5px;
+    } 
+
+    #cont2{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+    
+    #class2{
+        margin-top: 10%;
+    }
+
+    .class{
+        padding: 5px;
+    }
+  }
+
+#Weather{
+    text-align: center;
+}
+#Temps{
+    text-align: center;
+}
+
+#WeatherImage{
+    height: 300px;
+    width: 300px;
+    background-repeat: no-repeat;
+    background-size: 80% 80%;
+    margin: auto;
+    position: relative;
+    left: 30px;
+}
+
+#cont{
+    margin: auto;
+    text-align: center;
+}
+
+#cont2{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* position: relative;
+    top: 30px; */
+
+}
+.class{
+    height: 100px;
+    width: 150px;
+    margin: auto;
+    border: 2px solid #5783db;
+    border-radius: 20%;
+    background-color: transparent;
+    text-align: center;
+    background-color: rgba(87, 131, 219, 0.3);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#image{
+    height: 60px;
+    width: 60px;
+}
+
+
+#popup,#popup2,#popup3{
+    display: none; 
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(87, 131, 219, 0.7);
+    padding: 20px; 
+    border: 1px solid #5783db; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#changeloaction{
+    text-decoration: underline;
+}
+
+#Footer{
+    position: relative;
+    top: 60px;
+    background-color: rgba(87, 131, 219, 0.3);
+    border: #5783db;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.toggle{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.toggle #button{
+    background-color: wheat;
+    position: relative;
+    left: 20px;
+}
+
