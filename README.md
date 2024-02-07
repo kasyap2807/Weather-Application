@@ -28,6 +28,7 @@ open weather is used for Taking responsive maps of weather
 
 Using Alternatives to Avoiding Api Request Count Limit: https://ahorn.lima-city.de/owm/
 
+## Sample API Outputs : [API OUTPUT](https://github.com/kasyap2807/Weather-Application/blob/main/notes.txt)
 ## Output Pictures
 
 ### Main Weather Page
