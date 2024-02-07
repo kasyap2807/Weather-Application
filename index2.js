@@ -1,49 +1,49 @@
 async function changeBodyImage() {
-    // result = {
-    //     "coord": {
-    //       "lon": 80.8837,
-    //       "lat": 17.7731
-    //     },
-    //     "weather": [
-    //       {
-    //         "id": 800,
-    //         "main": "Clear",
-    //         "description": "clear sky",
-    //         "icon": "01n"
-    //       }
-    //     ],
-    //     "base": "stations",
-    //     "main": {
-    //       "temp": 74.95,
-    //       "feels_like": 75.76,
-    //       "temp_min": 74.95,
-    //       "temp_max": 74.95,
-    //       "pressure": 1018,
-    //       "humidity": 77,
-    //       "sea_level": 1018,
-    //       "grnd_level": 1011
-    //     },
-    //     "visibility": 10000,
-    //     "wind": {
-    //       "speed": 6.04,
-    //       "deg": 167,
-    //       "gust": 17.81
-    //     },
-    //     "clouds": {
-    //       "all": 0
-    //     },
-    //     "dt": 1707065135,
-    //     "sys": {
-    //       "country": "IN",
-    //       "sunrise": 1707008902,
-    //       "sunset": 1707049932
-    //     },
-    //     "timezone": 19800,
-    //     "id": 1276328,
-    //     "name": "Narsapuram",
-    //     "cod": 200
-    //   }
-    result = "";
+    result = {
+        "coord": {
+          "lon": 80.8837,
+          "lat": 17.7731
+        },
+        "weather": [
+          {
+            "id": 800,
+            "main": "Clear",
+            "description": "clear sky",
+            "icon": "01n"
+          }
+        ],
+        "base": "stations",
+        "main": {
+          "temp": 74.95,
+          "feels_like": 75.76,
+          "temp_min": 74.95,
+          "temp_max": 74.95,
+          "pressure": 1018,
+          "humidity": 77,
+          "sea_level": 1018,
+          "grnd_level": 1011
+        },
+        "visibility": 10000,
+        "wind": {
+          "speed": 6.04,
+          "deg": 167,
+          "gust": 17.81
+        },
+        "clouds": {
+          "all": 0
+        },
+        "dt": 1707065135,
+        "sys": {
+          "country": "IN",
+          "sunrise": 1707008902,
+          "sunset": 1707049932
+        },
+        "timezone": 19800,
+        "id": 1276328,
+        "name": "Narsapuram",
+        "cod": 200
+      }
+    // result = "";
     if (navigator.geolocation && localStorage.getItem("def")!="true") {
         navigator.geolocation.getCurrentPosition(async function(position) {
          localStorage.setItem("x",position.coords.latitude);
@@ -65,14 +65,14 @@ async function changeBodyImage() {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '9b9362d91bmsh7527e95a588a467p149b25jsn73a25ba4ee21',
+            'X-RapidAPI-Key': 'c9de2abecamsh1fd71b3e2ecc1c3p151e46jsna31375986770',
             'X-RapidAPI-Host': 'open-weather13.p.rapidapi.com'
         }
     };
 
     try {
-	    const response = await fetch(url, options);
-	    result =  await response.json();
+	    // const response = await fetch(url, options);
+	    // result =  await response.json();
         // console.log(localStorage.getItem("x"))
 	    // console.log(result.weather[0].main);
         weather = result.weather[0].main;   
@@ -199,7 +199,7 @@ async function nametolatlon(value){
 const options = {
  method: 'GET',
  headers: {
-     'X-RapidAPI-Key': '9b9362d91bmsh7527e95a588a467p149b25jsn73a25ba4ee21',
+     'X-RapidAPI-Key': 'c9de2abecamsh1fd71b3e2ecc1c3p151e46jsna31375986770',
      'X-RapidAPI-Host': 'address-from-to-latitude-longitude.p.rapidapi.com'
  }
 };
