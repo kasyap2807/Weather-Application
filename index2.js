@@ -1,49 +1,49 @@
 async function changeBodyImage() {
-    result = {
-        "coord": {
-          "lon": 80.8837,
-          "lat": 17.7731
-        },
-        "weather": [
-          {
-            "id": 800,
-            "main": "Clear",
-            "description": "clear sky",
-            "icon": "01n"
-          }
-        ],
-        "base": "stations",
-        "main": {
-          "temp": 74.95,
-          "feels_like": 75.76,
-          "temp_min": 74.95,
-          "temp_max": 74.95,
-          "pressure": 1018,
-          "humidity": 77,
-          "sea_level": 1018,
-          "grnd_level": 1011
-        },
-        "visibility": 10000,
-        "wind": {
-          "speed": 6.04,
-          "deg": 167,
-          "gust": 17.81
-        },
-        "clouds": {
-          "all": 0
-        },
-        "dt": 1707065135,
-        "sys": {
-          "country": "IN",
-          "sunrise": 1707008902,
-          "sunset": 1707049932
-        },
-        "timezone": 19800,
-        "id": 1276328,
-        "name": "Narsapuram",
-        "cod": 200
-      }
-    // result = "";
+    // result = {
+    //     "coord": {
+    //       "lon": 80.8837,
+    //       "lat": 17.7731
+    //     },
+    //     "weather": [
+    //       {
+    //         "id": 800,
+    //         "main": "Clear",
+    //         "description": "clear sky",
+    //         "icon": "01n"
+    //       }
+    //     ],
+    //     "base": "stations",
+    //     "main": {
+    //       "temp": 74.95,
+    //       "feels_like": 75.76,
+    //       "temp_min": 74.95,
+    //       "temp_max": 74.95,
+    //       "pressure": 1018,
+    //       "humidity": 77,
+    //       "sea_level": 1018,
+    //       "grnd_level": 1011
+    //     },
+    //     "visibility": 10000,
+    //     "wind": {
+    //       "speed": 6.04,
+    //       "deg": 167,
+    //       "gust": 17.81
+    //     },
+    //     "clouds": {
+    //       "all": 0
+    //     },
+    //     "dt": 1707065135,
+    //     "sys": {
+    //       "country": "IN",
+    //       "sunrise": 1707008902,
+    //       "sunset": 1707049932
+    //     },
+    //     "timezone": 19800,
+    //     "id": 1276328,
+    //     "name": "Narsapuram",
+    //     "cod": 200
+    //   }
+    result = "";
     if (navigator.geolocation && localStorage.getItem("def")!="true") {
         navigator.geolocation.getCurrentPosition(async function(position) {
          localStorage.setItem("x",position.coords.latitude);
@@ -71,8 +71,8 @@ async function changeBodyImage() {
     };
 
     try {
-	    // const response = await fetch(url, options);
-	    // result =  await response.json();
+	    const response = await fetch(url, options);
+	    result =  await response.json();
         // console.log(localStorage.getItem("x"))
 	    // console.log(result.weather[0].main);
         weather = result.weather[0].main;   
@@ -123,14 +123,14 @@ async function changeBodyImage() {
         document.getElementById("Location").innerHTML=localStorage.getItem("city");
         document.getElementById("changeloaction").innerHTML="Change in Location ?";
         if(localStorage.getItem("cel")==1){
-            document.getElementById("Temps").innerHTML="🔅temperature :"+ Math.round((result.main.temp- 32) * 5/9 )+"℃";
-            document.getElementById("feels like").innerHTML="But feels like :"+ Math.round((result.main.feels_like- 32) * 5/9 )+"℃";
-            document.getElementById("Minmax Temp").innerHTML= Math.round((result.main.feels_like- 32) * 5/9)+"℃/"+ Math.round((result.main.temp_max- 32) * 5/9 )+"℃";
+            document.getElementById("Temps").innerHTML="🔅temperature :"+ Math.round((result.main.temp- 273.15))+"℃";
+            document.getElementById("feels like").innerHTML="But feels like :"+ Math.round((result.main.feels_like- 273.15) )+"℃";
+            document.getElementById("Minmax Temp").innerHTML= Math.round((result.main.feels_like-273.15))+"℃/"+ Math.round((result.main.temp_max-273.15) )+"℃";
         }
         else{
-            document.getElementById("Temps").innerHTML="🔅temperature :"+(result.main.temp)+"℉";
-            document.getElementById("feels like").innerHTML="But feels like :"+(result.main.feels_like)+"℉";
-            document.getElementById("Minmax Temp").innerHTML=(result.main.temp_min)+"/"+(result.main.temp_max)+"℉";
+            document.getElementById("Temps").innerHTML="🔅temperature :"+((result.main.temp - 273.15) * 9/5 + 32)+"℉";
+            document.getElementById("feels like").innerHTML="But feels like :"+((result.main.feels_like - 273.15) * 9/5 + 32)+"℉";
+            document.getElementById("Minmax Temp").innerHTML=((result.main.temp_min - 273.15) * 9/5 + 32)+"/"+((result.main.temp_max - 273.15) * 9/5 + 32)+"℉";
         }
         document.getElementById("pressure").innerHTML=result.main.pressure;
         document.getElementById("humidity").innerHTML=result.main.humidity;
@@ -205,8 +205,8 @@ const options = {
 };
 
 try {
-//const responselat = await fetch(url, options);
- const responselat= {"Results":[{"Relevance":0.9577,"longitude":81.692624977647,"latitude":16.433574998022,"address":"Narasapuram, West Godavari, Andhra Pradesh, 534275, India","street":"Narasapuram","city":"Narasapuram","subregion":"West Godavari","country":"India","postalcode":"534275"},{"Relevance":0.9549,"longitude":81.6992,"latitude":16.44988,"address":"Narasapuram, West Godavari, Andhra Pradesh, India","city":"Narasapuram","subregion":"West Godavari","country":"India"},{"Relevance":0.9549,"longitude":81.07651,"latitude":17.1016,"address":"Narasāpuram, West Godāvari, Andhra Pradesh, India","subregion":"West Godāvari","country":"India"},{"Relevance":0.8962,"longitude":81.52136,"latitude":16.54493,"address":"Narsapur, Annavaram, Bhimavaram, West Godavari, Andhra Pradesh, India","city":"Bhimavaram","region":"Narsapur","subregion":"West Godavari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.69845,"latitude":16.43425,"address":"Narasapuram, Godāvari, Andhra Pradesh, India","city":"Narasapur","subregion":"Godāvari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.86803,"latitude":17.53708,"address":"Narasāpuram, Godāvari, Andhra Pradesh, India","subregion":"Godāvari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.81981,"latitude":17.34333,"address":"Narasāpuram, Godāvari, Andhra Pradesh, India","subregion":"Godāvari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.10437,"latitude":16.71311,"address":"West Godāvari, Andhra Pradesh, India","city":"Ellore","subregion":"West Godāvari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.585617572,"latitude":16.747941759,"address":"West Godavari, Andhra Pradesh, India","subregion":"West Godavari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.16667,"latitude":17,"address":"West Godāvari, Andhra Pradesh, India","subregion":"West Godāvari","country":"India"},{"Relevance":0.8147,"longitude":81.68715,"latitude":16.43379,"address":"Ongc Narsapuram, Narasapuram, West Godavari, Andhra Pradesh, 534275, India","city":"Narasapuram","subregion":"West Godavari","country":"India","postalcode":"534275"}]}
+ const responselat = await fetch(url, options);
+ // const responselat= {"Results":[{"Relevance":0.9577,"longitude":81.692624977647,"latitude":16.433574998022,"address":"Narasapuram, West Godavari, Andhra Pradesh, 534275, India","street":"Narasapuram","city":"Narasapuram","subregion":"West Godavari","country":"India","postalcode":"534275"},{"Relevance":0.9549,"longitude":81.6992,"latitude":16.44988,"address":"Narasapuram, West Godavari, Andhra Pradesh, India","city":"Narasapuram","subregion":"West Godavari","country":"India"},{"Relevance":0.9549,"longitude":81.07651,"latitude":17.1016,"address":"Narasāpuram, West Godāvari, Andhra Pradesh, India","subregion":"West Godāvari","country":"India"},{"Relevance":0.8962,"longitude":81.52136,"latitude":16.54493,"address":"Narsapur, Annavaram, Bhimavaram, West Godavari, Andhra Pradesh, India","city":"Bhimavaram","region":"Narsapur","subregion":"West Godavari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.69845,"latitude":16.43425,"address":"Narasapuram, Godāvari, Andhra Pradesh, India","city":"Narasapur","subregion":"Godāvari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.86803,"latitude":17.53708,"address":"Narasāpuram, Godāvari, Andhra Pradesh, India","subregion":"Godāvari","country":"India"},{"Relevance":0.8765999999999999,"longitude":81.81981,"latitude":17.34333,"address":"Narasāpuram, Godāvari, Andhra Pradesh, India","subregion":"Godāvari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.10437,"latitude":16.71311,"address":"West Godāvari, Andhra Pradesh, India","city":"Ellore","subregion":"West Godāvari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.585617572,"latitude":16.747941759,"address":"West Godavari, Andhra Pradesh, India","subregion":"West Godavari","country":"India"},{"Relevance":0.8181999999999999,"longitude":81.16667,"latitude":17,"address":"West Godāvari, Andhra Pradesh, India","subregion":"West Godāvari","country":"India"},{"Relevance":0.8147,"longitude":81.68715,"latitude":16.43379,"address":"Ongc Narsapuram, Narasapuram, West Godavari, Andhra Pradesh, 534275, India","city":"Narasapuram","subregion":"West Godavari","country":"India","postalcode":"534275"}]}
  const resultlat = await responselat.json();
  localStorage.setItem("x",resultlat.Results[0].latitude);
  localStorage.setItem("y",resultlat.Results[0].longitude);
@@ -218,17 +218,20 @@ try {
 
 function ftoc(){
     var checkbox = document.getElementById("checkbox");
+
+        var checkbox = document.getElementById("checkbox");
         if (checkbox.checked) {
             localStorage.setItem("cel",1)
-            document.getElementById("Temps").innerHTML="🔅temperature :"+ Math.round((result.main.temp- 32) * 5/9 )+"℃";
-            document.getElementById("feels like").innerHTML="But feels like :"+ Math.round((result.main.feels_like- 32) * 5/9 )+"℃";
-            document.getElementById("Minmax Temp").innerHTML= Math.round((result.main.feels_like- 32) * 5/9)+"℃/"+ Math.round((result.main.temp_max- 32) * 5/9 )+"℃";
+            document.getElementById("Temps").innerHTML="🔅temperature :"+ Math.round((result.main.temp- 273.15))+"℃";
+            document.getElementById("feels like").innerHTML="But feels like :"+ Math.round((result.main.feels_like- 273.15) )+"℃";
+            document.getElementById("Minmax Temp").innerHTML= Math.round((result.main.feels_like-273.15))+"℃/"+ Math.round((result.main.temp_max-273.15) )+"℃";
         } else {
             // Checkbox is unchecked (false)
             localStorage.setItem("cel",0)
-            document.getElementById("Temps").innerHTML="🔅temperature :"+(result.main.temp)+"℉";
-            document.getElementById("feels like").innerHTML="But feels like :"+(result.main.feels_like)+"℉";
-            document.getElementById("Minmax Temp").innerHTML=(result.main.temp_min)+"/"+(result.main.temp_max)+"℉";
+            document.getElementById("Temps").innerHTML="🔅temperature :"+((result.main.temp - 273.15) * 9/5 + 32)+"℉";
+            document.getElementById("feels like").innerHTML="But feels like :"+((result.main.feels_like - 273.15) * 9/5 + 32)+"℉";
+            document.getElementById("Minmax Temp").innerHTML=((result.main.temp_min - 273.15) * 9/5 + 32)+"/"+((result.main.temp_max - 273.15) * 9/5 + 32)+"℉";
+        
         }
 }
 
